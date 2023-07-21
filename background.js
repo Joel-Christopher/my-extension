@@ -1,4 +1,3 @@
-z;
 console.log("I am background script!");
 
 chrome.runtime.onInstalled.addListener(({ reason }) => {
@@ -9,6 +8,6 @@ chrome.runtime.onInstalled.addListener(({ reason }) => {
   }
 });
 
-chrome.tabs.getCurrent(function (tab) {
-  chrome.tabs.remove(tab.id, function () {});
-});
+// chrome.tabs.getCurrent(function(tab) {
+//   chrome.tabs.remove(tab.id, function() { });
+// });

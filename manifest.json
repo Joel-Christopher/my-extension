@@ -2,13 +2,16 @@
   "manifest_version": 3,
   "name": "screenTimeout()",
   "description": "Sreen time limiter",
-  "version": "1.0",
-  "permissions": ["tabs"],
+  "version": "0.0.1",
+
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": "images/clock.png"
+  },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "run_at": "document_idle",
-      "js": ["scripts/content.js"]
+      "js": ["content.js"]
     }
   ],
   "icons": {
@@ -17,8 +20,7 @@
   "background": {
     "service_worker": "background.js"
   },
-  "action": {
-    "default_popup": "popup/popup.html",
-    "default_icon": "images/clock.png"
-  }
+
+  "permissions": ["scripting", "tabs", "activeTab"],
+  "host_permissions": ["https://*"]
 }

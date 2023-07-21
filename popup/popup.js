@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM is loaded");
   const start = document.getElementById("start");
   const pause = document.getElementById("pause");
 
@@ -26,9 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       //self.close();
 
-      chrome.tabs.getCurrent(function (tab) {
-        chrome.tabs.remove(tab.id, function () {});
-      });
+      // chrome.tabs.getCurrent(function (tab) {
+      //   chrome.tabs.remove(tab.id, function () {});
+      // });
     }
     inputSec--;
   }
