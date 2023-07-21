@@ -27,9 +27,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
       //self.close();
 
-      // chrome.tabs.getCurrent(function (tab) {
-      //   chrome.tabs.remove(tab.id, function () {});
-      // });
+      // chrome.tabs.query({ url: $(location).attr('href')}, function(tabs) {  
+      //       chrome.tabs.remove(tabs[0].id);   
+      //   }); 
+
+      //this worked!
+      chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {  
+        chrome.tabs.remove(tabs[0].id);   
+    }); 
+
+    
     }
     inputSec--;
   }
