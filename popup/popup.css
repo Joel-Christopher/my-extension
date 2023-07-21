@@ -1,0 +1,14 @@
+html {
+  height: 100px;
+  font-family: "Optima";
+}
+
+body {
+  background-color: #ffe7e0;
+  font-size: 0.5rem;
+  text-align: center;
+}
+
+input {
+  margin-bottom: 3px;
+}
