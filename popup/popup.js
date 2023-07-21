@@ -1,19 +1,49 @@
-console.log("this is a popup");
+document.addEventListener("DOMContentLoaded", () => {
+  const start = document.getElementById("start");
+  const pause = document.getElementById("pause");
 
+  let inputSec;
+  let myInterval;
 
-// create variables to get id of buttons
-const start = document.querySelector("#start");
-const pause = document.querySelector("#pause");
+  function timer() {
+    let timeEl = document.getElementById("time");
+    let min = Math.floor(inputSec / 60);
+    let sec = inputSec - min * 60;
 
-// initialize pause to be disabled
-pause.disabled = true;
+    if (sec < 10) {
+      sec = "0" + sec;
+    }
 
-start.addEventListener("click", () => {
-  start.disabled = true;
-  pause.disabled = false;
-})
+    let timeLeft = `${min}:${sec}`;
 
-pause.addEventListener("click", () => {
+    timeEl.innerHTML = timeLeft;
+
+    if (inputSec < 0) {
+      alert("GO TOUCH SOME GRASS");
+      clearInterval(myInterval);
+      window.close();
+    }
+    inputSec--;
+  }
+
+  // initialize pause to be disabled
   pause.disabled = true;
-  start.disabled = false;
-})
+
+  start.addEventListener("click", () => {
+    let timeInput = document.getElementById("newTime").value;
+
+    inputSec = timeInput * 60;
+    start.disabled = true;
+    pause.disabled = false;
+
+    myInterval = setInterval(timer, 1000);
+  });
+
+  pause.addEventListener("click", () => {
+    clearInterval(myInterval);
+    //pause does not save remaining time
+    //when pressing start again time resets to whatever was in the field
+    pause.disabled = true;
+    start.disabled = false;
+  });
+});

@@ -1,20 +1,16 @@
-<html>
+<html lang="'en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="popup.css" />
+    <title>screenTimeout</title>
   </head>
   <body>
     <h1 id="ext-name">screenTimeout( )</h1>
-    <form>
-      <input
-        id="timer"
-        name="timer"
-        type="number"
-        placeholder="Set Time (min)"
-        required
-        min="0"
-        step="1"
-      />
+    <h2 id="time">0:00</h2>
+    <form id="enterTime">
+      <input type="text" id="newTime" placeholder="Set Time (min)" />
       <div class="timer-controls">
         <button type="submit" id="start">Start</button>
         <button id="pause">Pause</button>
