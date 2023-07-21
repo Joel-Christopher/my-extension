@@ -1,10 +1,10 @@
 {
   "manifest_version": 3,
-  "name": "screenTimeout",
+  "name": "screenTimeout()",
   "description": "Sreen time limiter",
   "version": "1.0",
   "action": {
-    "default_popup": "restYourEyes.html",
-    "default_icon": "goTouchSomeGrass.png"
+    "default_popup": "popup/popup.html",
+    "default_icon": "images/goTouchSomeGrass.png"
   }
 }
