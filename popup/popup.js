@@ -21,7 +21,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (inputSec < 0) {
       alert("GO TOUCH SOME GRASS");
       clearInterval(myInterval);
-      window.close();
+      // closing of the current tab
+      // window.close();
+
+      // self.close();
+      
+      // chrome.tabs.getCurrent(function(tab) {
+      //   chrome.tabs.remove(tab.id, function() { });
+      // });
     }
     inputSec--;
   }

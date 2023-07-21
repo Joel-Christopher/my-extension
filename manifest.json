@@ -3,6 +3,9 @@
   "name": "screenTimeout()",
   "description": "Sreen time limiter",
   "version": "1.0",
+  "permissions": [
+    "tabs"
+  ],
   "action": {
     "default_popup": "popup/popup.html",
     "default_icon": "images/goTouchSomeGrass.png"
