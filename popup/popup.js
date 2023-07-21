@@ -18,17 +18,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     timeEl.innerHTML = timeLeft;
 
-    if (inputSec < 0) {
+    if (inputSec === 0) {
       alert("GO TOUCH SOME GRASS");
       clearInterval(myInterval);
       // closing of the current tab
       // window.close();
 
-      // self.close();
-      
-      // chrome.tabs.getCurrent(function(tab) {
-      //   chrome.tabs.remove(tab.id, function() { });
-      // });
+      //self.close();
+
+      chrome.tabs.getCurrent(function (tab) {
+        chrome.tabs.remove(tab.id, function () {});
+      });
     }
     inputSec--;
   }

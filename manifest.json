@@ -3,11 +3,22 @@
   "name": "screenTimeout()",
   "description": "Sreen time limiter",
   "version": "1.0",
-  "permissions": [
-    "tabs"
+  "permissions": ["tabs"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "run_at": "document_idle",
+      "js": ["scripts/content.js"]
+    }
   ],
+  "icons": {
+    "128": "images/clock.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
   "action": {
     "default_popup": "popup/popup.html",
-    "default_icon": "images/goTouchSomeGrass.png"
+    "default_icon": "images/clock.png"
   }
 }
