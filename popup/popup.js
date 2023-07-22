@@ -47,9 +47,19 @@ document.addEventListener("DOMContentLoaded", () => {
   start.addEventListener("click", () => {
     let timeInput = document.getElementById("newTime").value;
 
+    start.innerHTML = 'Resume'
     inputSec = timeInput * 60;
     start.disabled = true;
     pause.disabled = false;
+
+    // if (document.getElementById("time").innerHTML !== "0:00") {
+    //   // inputSec = document.getElementById("time").innerHTML * 60;
+    //   console.log(inputSec)
+    //   start.disabled = true;
+    //   pause.disabled = false;
+
+    //   myInterval = setInterval(timer, 1000);
+    // }
 
     myInterval = setInterval(timer, 1000);
   });
@@ -60,5 +70,20 @@ document.addEventListener("DOMContentLoaded", () => {
     //when pressing start again time resets to whatever was in the field
     pause.disabled = true;
     start.disabled = false;
+    // inputSec = document.getElementById("time").innerHTML * 60
+    // console.log(inputSec)
+    // moved below code to start.addEventListener
+    // start.innerHTML = 'Resume'
+    // document.getElementById("start").setAttribute("id", "resume")
   });
+
+  // resume.addEventListener("click", () => {
+
+  //   inputSec = document.getElementById("time").innerHTML * 60;
+  //   console.log(inputSec)
+  //   resume.disabled = true;
+  //   pause.disabled = false;
+
+  //   myInterval = setInterval(timer, 1000);
+  // })
 });
