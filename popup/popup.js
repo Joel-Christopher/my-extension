@@ -31,13 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
       //       chrome.tabs.remove(tabs[0].id);   
       //   }); 
 
-      //this worked!
+      //this worked for google homepage and youtube
       chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {  
         chrome.tabs.remove(tabs[0].id);   
     }); 
 
     
-    }
+  }
     inputSec--;
   }
 
